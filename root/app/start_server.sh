@@ -75,4 +75,5 @@ fi
 
 # Finally, run the server
 echo "Starting server..."
+sleep 300 #debugging
 exec ./ucc-bin server "${SERVER_START_COMMAND:-"DM-Antalus?game=xGame.xDeathMatch"}${SERVER_START_EXTRAS:-}" ini=UT2004.ini -nohomedir
