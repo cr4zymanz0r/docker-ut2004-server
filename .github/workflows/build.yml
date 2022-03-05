@@ -26,7 +26,7 @@ jobs:
       packages: write
     env:
       TITLE: UT2004 Server
-      GHCR_SLUG: ghcr.io/phasecorex/ut2004-server
+      GHCR_SLUG: ghcr.io/cr4zymanz0r/ut2004-server
       DOCK_SLUG: docker.io/phasecorex/ut2004-server
     steps:
       -
@@ -54,13 +54,6 @@ jobs:
           registry: ghcr.io
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GITHUB_TOKEN }}
-      -
-        name: Login to DockerHub
-        if: github.event_name != 'pull_request'
-        uses: docker/login-action@v1
-        with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
       -
         name: Build and push
         uses: docker/build-push-action@v2
